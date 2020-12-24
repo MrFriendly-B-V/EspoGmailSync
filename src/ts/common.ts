@@ -1,3 +1,8 @@
+/**
+ * Escapes the provided string to make it safe for usage in a HTML document
+ * @param str The string to escape to make it safe for usage in a HTML document 
+ * @returns The escaped string
+ */
 export function htmlEscape(str: string): string {
     return String(str)
             .replace(/&/g, '&amp;')
@@ -7,10 +12,19 @@ export function htmlEscape(str: string): string {
             .replace(/>/g, '&gt;');
 }
 
+/**
+ * Get the session ID from the cookies
+ * @returns The session ID
+ */
 export function getSessionId(): string {
 	return getCookie("session");
 }
 
+/**
+ * Get the value of a GET parameter
+ * @param parameterName The name of the parameter
+ * @returns The value of the requested parameter. Null if parameter doesn't exist
+ */
 export function findGetParameter(parameterName: string): string {
     var result = null,
         tmp = [];
@@ -24,6 +38,11 @@ export function findGetParameter(parameterName: string): string {
     return result;
 }
 
+/**
+ * Get the value of a cookie from the cookiejar
+ * @param cookieName The name of the cookie
+ * @returns The value of the requested cookie
+ */
 export function getCookie(cookieName: string): string {
 	var name: string = cookieName + "=";
 	var decodedCookie: string = decodeURIComponent(document.cookie);
