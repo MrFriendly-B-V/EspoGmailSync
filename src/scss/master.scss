@@ -1,0 +1,9 @@
+@import "navbar.scss";
+@import "fonts.scss";
+
+html,body {
+    @include set-font;
+    background-color: #282c34;
+    width: 100%;
+    margin: 0;
+}

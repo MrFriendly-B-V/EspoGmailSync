@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "ES6",
+        "target": "es5",
+        "watch": true,
+        "lib": ["dom", "ES2020", "ES5"],
+        "sourceMap": true,
+        "outDir": "js/",
+        "removeComments": true
+    }
+}
