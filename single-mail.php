@@ -40,9 +40,9 @@
                 </div>
             </main>
         </div>
-        <script src="js/single-mail.js"></script>
+        <script src="dist/main.js"></script>
         <script>
-            getSingleMail();
+            EspoGmailSync.getSingleMail();
         </script>
     </body>
 </html>

@@ -14,4 +14,7 @@ export interface Message {
     from:            string;
     id:              string;
     to:              string;
+    previousMessage: string;
+    nextMessage:     string;
+    body_text_html_decoded: string;
 }

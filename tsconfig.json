@@ -1,11 +1,10 @@
 {
     "compilerOptions": {
+        "sourceMap": true,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "lib": ["dom", "ES2020", "ES5"],
         "module": "ES6",
         "target": "es5",
-        "watch": true,
-        "lib": ["dom", "ES2020", "ES5"],
-        "sourceMap": true,
-        "outDir": "js/",
-        "removeComments": true
     }
 }
