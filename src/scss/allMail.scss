@@ -1,0 +1,70 @@
+.allEmailRow {
+    display: block;
+    
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    padding: 2px;
+    margin: 5px;
+
+    .mailRowElement {
+        color: white;
+        vertical-align: middle;
+    }
+
+    .mailDate {
+        color: gray;
+    }
+
+    .mailId {
+        visibility: hidden;
+        display: inline;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    //Mobile devices
+    @media only screen and (max-device-width: 480px) {
+        .mailRowElement {
+            display: block;
+            padding: 5px;
+            margin: 0;
+
+            overflow: visible;
+        }
+
+        .mailDate {
+            visibility: hidden;
+            font-size: 0;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    //Desktop devices
+    @media only screen and (min-device-width: 480px) {
+        .mailRowElement {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .mailSubject {
+            width: 100ch;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space:nowrap;
+        }
+
+        .mailSender {
+            text-align: left;
+            float: right;
+        }
+    }
+}
+
+.allEmailRow:hover {
+    cursor: pointer;
+    background-color: adjust-hue($background-color, $degrees: 20);
+    transition: all 0.2s;
+}

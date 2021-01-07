@@ -51,6 +51,14 @@ export function getSingleMail() {
             nextMessage.innerHTML = "Previous E-Mail";
         }
 
+        //Link to go to gmail
+        var linkToGmail = document.createElement("a");
+        linkToGmail.classList.add("mailLinkToGmail");
+        linkToGmail.href = "https://accounts.google.com/ServiceLogin?service=mail&passive=&Email=" + message.to + "&continue=https://mail.google.com/mail/u/" + message.to + "/%23inbox/" + message.id;
+        linkToGmail.innerHTML = "Message in Gmail";
+        linkToGmail.target = "_blank";
+        mailContentDiv.append(linkToGmail);
+
         //Email subject
         var subject = document.createElement("p");
         subject.classList.add("mailHeader");
@@ -70,10 +78,13 @@ export function getSingleMail() {
         mailContentDiv.append(to);
 
         //TODO add a check to leave this out of the document if it's empty
-        var cc = document.createElement("p");
-        cc.classList.add("mailHeader");
-        cc.innerHTML = "CC: " + htmlEscape(message.cc ?? "");
-        mailContentDiv.append(cc);
+        if(message.cc != null) {
+            var cc = document.createElement("p");
+            cc.classList.add("mailHeader");
+            cc.innerHTML = "CC: " + htmlEscape(message.cc);
+            mailContentDiv.append(cc);
+        }
+
 
         //Horizontal line to split the body and the headers
         var hr = document.createElement("hr");
@@ -88,7 +99,7 @@ export function getSingleMail() {
     
         //The body itself.    
         var body = document.createElement("div");
-        body.innerHTML = message.body_text_html_decoded;
+        body.innerHTML = message.body_text_html_decoded ?? message.body_text_plain;
         body.classList.add("mailBody");
         mailContentDiv.append(body);
     }));

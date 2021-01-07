@@ -2,12 +2,12 @@
 <html lang="en">
     <head>
 		<meta charset="utf-8">
-		<?php require "../common_include.php"; ?>
-
+        <?php require "../common_include.php"; ?>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
         <script src="dist/main.js"></script>
 
-        <title> MrFriendly EspoGmailSync - Single Mail </title>
+        <title> MrFriendly EspoGmailSync - All Mail </title>
     </head>
     <body>
 		<!--This webpage does not work without JavaScript enabled-->
@@ -33,13 +33,13 @@
                 </div>
             </header>
             <main>
-                <div id="mailContent">
+                <div id="inbox">
 
                 </div>
             </main>
         </div>
         <script>
-            EspoGmailSync.getSingleMail();
+            EspoGmailSync.getAllMail();
         </script>
     </body>
 </html>

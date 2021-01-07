@@ -1,10 +1,13 @@
+$background-color: #282c34;
+
 @import "navbar.scss";
 @import "fonts.scss";
-@import "mail.scss";
+@import "singleMail.scss";
+@import "allMail.scss";
 
 html,body {
     @include set-font;
-    background-color: #282c34;
+    background-color: $background-color;
     width: 100%;
     margin: 0;
 }

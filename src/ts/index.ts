@@ -6,4 +6,9 @@
  * @file index.ts
  */
 
+//Code
 export { getSingleMail } from "./getMailSingle";
+export { getAllMail } from "./getAllMail";
+
+//Styles
+import "../scss/master.scss";

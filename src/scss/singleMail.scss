@@ -1,0 +1,22 @@
+.mailHeader {
+    color: white;
+}
+
+.bodyIndicator {
+    color: white;
+}
+
+.mailBody {
+    color: white;
+}
+
+.mailLinkToGmail {
+    text-decoration: none;
+    color: white;
+}
+
+.mailLinkToGmail:hover {
+    color: gray;    
+    text-decoration: underline;
+    transition: all 0.2s;
+}
