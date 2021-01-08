@@ -12,6 +12,8 @@ export function getAllMail(): void {
     $.when(fetchAllMail(emailAddresses, sessionId).then(function(e) {
         var response: Response = e;
 
+        console.log(response);
+
         //If the response status isn't 200, there's
         //likely an authentication issue
         if(response.status != 200) {
@@ -53,8 +55,6 @@ export function getAllMail(): void {
             id.innerHTML = message.id;
             rowDiv.append(id);
 
-            console.log(id);
-
             //Email date
             var date = document.createElement("p");
             date.classList.add("mailDate", "mailRowElement");
@@ -87,7 +87,7 @@ function fetchAllMail(emailAddresses: string, sessionId: string) {
         method: "get",
         data: {
             "sessionId": sessionId,
-            "emailAddresses": emailAddresses
+            "senderAddress": emailAddresses
         }
     });
 }
