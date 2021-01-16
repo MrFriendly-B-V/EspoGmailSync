@@ -18,11 +18,14 @@
 		<?php
 			//Check if the user is authenticated to visit this page
 			$from = "https://intern.mrfriendly.nl/espogmailsync"; 
-			//require "../common_login.php";
+			require "../common_login.php";
 		?>
-
-        <script src="js/fetchMail.js"></script>
         
+        <script>
+            var root = document.getElementsByClassName("root")[0];
+            root.style.visibility = "visible";
+        </script>
+
         <div class="root">
             <!--Navigation bar-->
             <header>

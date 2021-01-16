@@ -64,9 +64,13 @@ export function getCookie(cookieName: string): string {
  * Convert epoch time (seconds since January 1st 1970; also known as Unix time) to dd/mm/yyyy in UTC
  * @param epoch Epoch time as a number
  */
-export function epochToUtcDate(epoch: number): string {
+export function epochToUtcDate(epoch: number, includeTime = false): string {
     var date = new Date(epoch);
-    var formattedDate = date.getUTCDay() + "/" + date.getUTCMonth() + "/" + date.getUTCFullYear();
+    var formattedDate = ("0" + date.getUTCDate()).slice(-2) + "-" + ("0" + (date.getUTCMonth() +1)).slice(-2) + "-" + date.getUTCFullYear();
+
+    if(includeTime) {
+        formattedDate += " " + ("0" + date.getUTCHours()).slice(-2) + ":" + ("0" + date.getUTCMinutes()).slice(-2);
+    }
 
     return formattedDate;
 }

@@ -1,70 +1,141 @@
+$priorityLow: gray;
+
+$hoverColor: #49515F;
+
+$outboundColor: red;
+$inboundColor: green;
+
 .allEmailRow {
-    display: block;
-    
     border: 1px solid gray;
     border-radius: 5px;
-
+    border-collapse: collapse;
+    
+    width: 100%;
     padding: 2px;
     margin: 5px;
 
-    .mailRowElement {
-        color: white;
-        vertical-align: middle;
-    }
-
-    .mailDate {
-        color: gray;
-    }
-
-    .mailId {
-        visibility: hidden;
-        display: inline;
-        font-size: 0;
-        padding: 0;
-        margin: 0;
-    }
-
-    //Mobile devices
-    @media only screen and (max-device-width: 480px) {
+    td {
         .mailRowElement {
-            display: block;
-            padding: 5px;
-            margin: 0;
-
-            overflow: visible;
+            color: white;
+            vertical-align: middle;
         }
 
-        .mailDate {
-            visibility: hidden;
-            font-size: 0;
-            margin: 0;
-            padding: 0;
-        }
-    }
-
-    //Desktop devices
-    @media only screen and (min-device-width: 480px) {
-        .mailRowElement {
-            display: inline-block;
-            margin: 5px;
+        .mailFromToHeader {
+            color: $priorityLow;
         }
 
-        .mailSubject {
-            width: 100ch;
+        .mailsender,.mailReceiver {
+            width: 40ch;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space:nowrap;
         }
-
-        .mailSender {
-            text-align: left;
+    
+        .mailId {
+            visibility: hidden;
+            display: inline;
+            font-size: 0;
+            padding: 0;
+            margin: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+    
+        .mailDate {
+            color: $priorityLow;
+            text-align: right;
             float: right;
+        }
+
+        .outbound {
+            color: $outboundColor;
+        }
+
+        .inbound {
+            color: $inboundColor;
+        }
+    
+        //Mobile devices
+        @media only screen and (max-device-width: 480px) {
+            .mailRowElement {
+                display: block;
+                padding: 5px;
+                margin: 0;
+    
+                overflow: visible;
+            }
+    
+            .mailDate {
+                visibility: hidden;
+                font-size: 0;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    
+        //Desktop devices
+        @media only screen and (min-device-width: 480px) {
+            .mailRowElement {
+                display: inline-block;
+                margin: 5px;
+            }
+    
+            .mailSubject {
+                width: 100ch;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space:nowrap;
+            }
         }
     }
 }
 
 .allEmailRow:hover {
     cursor: pointer;
-    background-color: adjust-hue($background-color, $degrees: 20);
+    background-color: $hoverColor;
+    border: none;
     transition: all 0.2s;
+}
+
+.navHolder {
+    width: 100%;
+    
+    display: block;
+    place-items: center;
+    float:center;
+
+    .pageNav {
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid black;
+
+        height: auto;
+        width: auto;
+
+        .nextPage, .prevPage {
+            display: flex;
+            flex-direction: column;
+            
+            border: 1px solid gray;
+            background-color: gray;
+            color: white;
+            border-radius: 3px;
+            
+            margin: 5px;
+            padding: 0;
+
+            width: 9em;
+            height: 4em;
+            line-height: 2em;
+            text-align: center;
+
+            transform: scale(0.8);
+        }
+
+        .nextPage:hover, .prevPage:hover {
+            transform: scale(0.9);
+            transition: .2s all;
+        }
+    }
 }

@@ -54,7 +54,17 @@ export function getSingleMail() {
         //Link to go to gmail
         var linkToGmail = document.createElement("a");
         linkToGmail.classList.add("mailLinkToGmail");
-        linkToGmail.href = "https://accounts.google.com/ServiceLogin?service=mail&passive=&Email=" + message.to + "&continue=https://mail.google.com/mail/u/" + message.to + "/%23inbox/" + message.id;
+
+        var toRegex = /<([^>]*)>/gm;
+        var toFilterered: string;
+        if(message.to.match(toRegex) != null) {
+            toFilterered = message.to.match(toRegex)[0];
+        } else {
+            toFilterered = message.to;
+        }
+        toFilterered.replace("<", "").replace(">", "");
+
+        linkToGmail.href = "https://accounts.google.com/ServiceLogin?service=mail&passive=&Email=" + toFilterered + "&continue=https://mail.google.com/mail/u/" + toFilterered + "/%23inbox/" + message.id;
         linkToGmail.innerHTML = "Message in Gmail";
         linkToGmail.target = "_blank";
         mailContentDiv.append(linkToGmail);
