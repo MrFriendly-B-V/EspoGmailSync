@@ -23,6 +23,7 @@ export function getAllMail(): void {
 
 function fetchAllMail(emailAddresses: string, sessionId: string, page: number) {
     return $.ajax({
+        //url: "http://localhost:8080/espogmailsync/mail",
         url: "https://api.intern.mrfriendly.nl/espogmailsync/mail",
         method: "get",
         data: {

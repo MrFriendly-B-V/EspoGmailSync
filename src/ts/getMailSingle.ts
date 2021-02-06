@@ -118,6 +118,7 @@ export function getSingleMail() {
 //Ajax function used to fetch a single mail from the webserver
 function fetchSingleMail(mailId: string, sessionId: string) {
     return $.ajax({
+        //url: "http://localhost:8080/espogmailsync/mail",
         url: "https://api.intern.mrfriendly.nl/espogmailsync/mail",
         method: "get",
         data: {

@@ -20,11 +20,6 @@
 			$from = "https://intern.mrfriendly.nl/espogmailsync"; 
 			require "../common_login.php";
 		?>
-        
-        <script>
-            var root = document.getElementsByClassName("root")[0];
-            root.style.visibility = "visible";
-        </script>
 
         <div class="root">
             <!--Navigation bar-->
@@ -38,5 +33,10 @@
                 </div>
             </header>
         </div>
+
+        <script>
+            var root = document.getElementsByClassName("root")[0];
+            root.style.visibility = "visible";
+        </script>
     </body>
 </html>
