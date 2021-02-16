@@ -26,7 +26,8 @@ export function getSingleMail() {
         //If the response status isn't 200, there's
         //likely an authentication issue
         if(response.status != 200) {
-            alert(response.message);
+            window.location.href = "index.php";
+            throw new Error("Non 200 status code returned by server: " + e);
         }
 
         //we're only requesting one email, so we can just get the first Message

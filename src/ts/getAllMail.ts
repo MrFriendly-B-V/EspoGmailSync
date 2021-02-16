@@ -39,7 +39,8 @@ function allMailFetched(response: Response) {
     // If the response status isn't 200, there's
     //likely an authentication issue
     if(response.status != 200) {
-        alert(response.message);
+        window.location.href = "index.php";
+        throw new Error("Non 200 status code returned by server: " + String(response));
     }
 
     //Sort the messages by epoch_data, descending
