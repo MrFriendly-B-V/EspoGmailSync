@@ -7,8 +7,8 @@
  */
 
 //Code
-export { getSingleMail } from "./getMailSingle";
-export { getAllMail } from "./getAllMail";
+//export { getSingleMail } from "./mail/single_mail";
+export { getAllMail } from "./mail/all_mail";
 
 //Styles
 import "../scss/master.scss";
